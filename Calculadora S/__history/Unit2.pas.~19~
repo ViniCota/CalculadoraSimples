@@ -1,0 +1,180 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Btn7: TButton;
+    BtnMultiplicacao: TButton;
+    BtnSubtracao: TButton;
+    BtnAdicao: TButton;
+    Btn4: TButton;
+    BtnIgual: TButton;
+    BtnVirgula: TButton;
+    Btn8: TButton;
+    Btn0: TButton;
+    Btn5: TButton;
+    Btn1: TButton;
+    Btn9: TButton;
+    Btn6: TButton;
+    Btn2: TButton;
+    Btn3: TButton;
+    BtnDivisao: TButton;
+    BtnLimpar: TButton;
+    Visor: TEdit;
+    procedure Btn0Click(Sender: TObject);
+    procedure Btn1Click(Sender: TObject);
+    procedure Btn2Click(Sender: TObject);
+    procedure Btn3Click(Sender: TObject);
+    procedure Btn4Click(Sender: TObject);
+    procedure Btn5Click(Sender: TObject);
+    procedure Btn6Click(Sender: TObject);
+    procedure Btn7Click(Sender: TObject);
+    procedure Btn8Click(Sender: TObject);
+    procedure Btn9Click(Sender: TObject);
+    procedure BtnVirgulaClick(Sender: TObject);
+  private
+    ValorAtual: double;
+    operacao: integer;
+    limpar: boolean;
+  public
+
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+{ Eventos Click }
+procedure TForm2.Btn0Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '0';
+end;
+
+procedure TForm2.Btn1Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '1';
+end;
+
+procedure TForm2.Btn2Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '2';
+end;
+
+procedure TForm2.Btn3Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '3';
+end;
+
+procedure TForm2.Btn4Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '4';
+end;
+
+procedure TForm2.Btn5Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '5';
+end;
+
+procedure TForm2.Btn6Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '6';
+end;
+
+procedure TForm2.Btn7Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '7';
+end;
+
+procedure TForm2.Btn8Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '8';
+end;
+
+procedure TForm2.Btn9Click(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + '9';
+end;
+
+
+procedure TForm2.BtnVirgulaClick(Sender: TObject);
+begin
+  if limpar then
+  begin
+
+    Visor.Text := '';
+    limpar := false;
+  end;
+  Visor.Text := Visor.Text + ',';
+end;
+{Click Operacoes}
+
+                  end.
