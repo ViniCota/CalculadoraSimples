@@ -39,6 +39,11 @@ type
     procedure Btn9Click(Sender: TObject);
     procedure BtnVirgulaClick(Sender: TObject);
     procedure BtnAdicaoClick(Sender: TObject);
+    procedure BtnSubtracaoClick(Sender: TObject);
+    procedure BtnMultiplicacaoClick(Sender: TObject);
+    procedure BtnDivisaoClick(Sender: TObject);
+    procedure BtnIgualClick(Sender: TObject);
+    procedure BtnLimparClick(Sender: TObject);
   private
     ValorAtual: double;
     operacao: integer;
@@ -165,17 +170,6 @@ begin
   Visor.Text := Visor.Text + '9';
 end;
 
-procedure TForm2.BtnAdicaoClick(Sender: TObject);
-begin
-        if limpar then
-  begin
-
-    Visor.Text := '';
-    limpar := false;
-  end;
-  Visor.Text := Visor.Text + ',';
-end;
-
 procedure TForm2.BtnVirgulaClick(Sender: TObject);
 begin
   if limpar then
@@ -186,8 +180,62 @@ begin
   end;
   Visor.Text := Visor.Text + ',';
 end;
-{Click Operacoes}
 
+{ Click operacao }
+procedure TForm2.BtnAdicaoClick(Sender: TObject);
+begin
+  operacao := 1;
+  limpar := true;
+  ValorAtual := StrToFloat(Visor.Text);
+end;
 
+procedure TForm2.BtnSubtracaoClick(Sender: TObject);
+begin
+  operacao := 2;
+  limpar := true;
+  ValorAtual := StrToFloat(Visor.Text);
+end;
 
- end.
+procedure TForm2.BtnMultiplicacaoClick(Sender: TObject);
+begin
+  operacao := 3;
+  limpar := true;
+  ValorAtual := StrToFloat(Visor.Text);
+end;
+
+procedure TForm2.BtnDivisaoClick(Sender: TObject);
+begin
+  operacao := 4;
+  limpar := true;
+  ValorAtual := StrToFloat(Visor.Text);
+end;
+
+procedure TForm2.BtnIgualClick(Sender: TObject);
+var
+  valor2, resultado: double;
+begin
+  valor2 := StrToFloat(Visor.Text);
+  case operacao of
+    1:
+      resultado := ValorAtual + valor2;
+    2:
+      resultado := ValorAtual - valor2;
+    3:
+      resultado := ValorAtual * valor2;
+    4:
+      resultado := ValorAtual / valor2;
+  end;
+  limpar := true;
+  Visor.Text := FloatToStr(resultado);
+  valoratual := resultado;
+end;
+
+procedure TForm2.BtnLimparClick(Sender: TObject);
+begin
+      valoratual := 0;
+      visor.Text := '0';
+      operacao := 0;
+      limpar := True;
+end;
+
+end.

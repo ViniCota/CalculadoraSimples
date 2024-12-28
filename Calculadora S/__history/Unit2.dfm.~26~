@@ -1,9 +1,9 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form2'
-  ClientHeight = 192
-  ClientWidth = 325
+  Caption = 'Calculadora'
+  ClientHeight = 197
+  ClientWidth = 334
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -27,6 +27,7 @@ object Form2: TForm2
     Height = 25
     Caption = 'X'
     TabOrder = 1
+    OnClick = BtnMultiplicacaoClick
   end
   object BtnSubtracao: TButton
     Left = 251
@@ -35,6 +36,7 @@ object Form2: TForm2
     Height = 25
     Caption = '-'
     TabOrder = 2
+    OnClick = BtnSubtracaoClick
   end
   object BtnAdicao: TButton
     Left = 251
@@ -43,6 +45,7 @@ object Form2: TForm2
     Height = 25
     Caption = '+'
     TabOrder = 3
+    OnClick = BtnAdicaoClick
   end
   object Btn4: TButton
     Left = 8
@@ -60,6 +63,7 @@ object Form2: TForm2
     Height = 25
     Caption = '='
     TabOrder = 5
+    OnClick = BtnIgualClick
   end
   object BtnVirgula: TButton
     Left = 8
@@ -149,14 +153,16 @@ object Form2: TForm2
     Height = 25
     Caption = '/'
     TabOrder = 15
+    OnClick = BtnDivisaoClick
   end
   object BtnLimpar: TButton
-    Left = 56
+    Left = 8
     Top = 161
-    Width = 75
+    Width = 318
     Height = 25
     Caption = 'Limpar'
     TabOrder = 16
+    OnClick = BtnLimparClick
   end
   object Visor: TEdit
     Left = 8

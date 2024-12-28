@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Calculadora'
-  ClientHeight = 197
-  ClientWidth = 334
+  ClientHeight = 203
+  ClientWidth = 595
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -170,5 +170,12 @@ object Form2: TForm2
     Width = 318
     Height = 23
     TabOrder = 17
+  end
+  object memHistorico: TMemo
+    Left = 332
+    Top = 8
+    Width = 255
+    Height = 178
+    TabOrder = 18
   end
 end

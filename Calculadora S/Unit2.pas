@@ -27,6 +27,7 @@ type
     BtnDivisao: TButton;
     BtnLimpar: TButton;
     Visor: TEdit;
+    memHistorico: TMemo;
     procedure Btn0Click(Sender: TObject);
     procedure Btn1Click(Sender: TObject);
     procedure Btn2Click(Sender: TObject);
@@ -48,6 +49,9 @@ type
     ValorAtual: double;
     operacao: integer;
     limpar: boolean;
+    procedure Historico(const operacao: string;
+      valor1, valor2, resultado: double);
+    function Simbolo(operacao: integer): String;
   public
 
   end;
@@ -58,8 +62,29 @@ var
 implementation
 
 {$R *.dfm}
-
 { Eventos Click }
+
+procedure TForm2.Historico(const operacao: string;
+  valor1, valor2, resultado: double);
+begin
+  memHistorico.Lines.Add(Format('%f %s %f = %f', [valor1, operacao, valor2,
+    resultado]));
+end;
+
+function TForm2.Simbolo(operacao: integer): String;
+begin
+  case operacao of
+    1:
+      result := '+';
+    2:
+      result := '-';
+    3:
+      result := 'x';
+    4:
+      result := '/';
+  end;
+end;
+
 procedure TForm2.Btn0Click(Sender: TObject);
 begin
   if limpar then
@@ -225,17 +250,20 @@ begin
     4:
       resultado := ValorAtual / valor2;
   end;
+
+ Historico(Simbolo(operacao),valoratual, valor2, resultado);
+
   limpar := true;
   Visor.Text := FloatToStr(resultado);
-  valoratual := resultado;
+  ValorAtual := resultado;
 end;
-
 procedure TForm2.BtnLimparClick(Sender: TObject);
 begin
-      valoratual := 0;
-      visor.Text := '0';
-      operacao := 0;
-      limpar := True;
+  ValorAtual := 0;
+  Visor.Text := '0';
+  operacao := 0;
+  limpar := true;
+  memHistorico.Clear;
 end;
 
 end.
